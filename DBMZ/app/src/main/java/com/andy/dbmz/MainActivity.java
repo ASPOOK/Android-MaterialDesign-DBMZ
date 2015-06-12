@@ -1,6 +1,7 @@
 package com.andy.dbmz;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,24 +15,34 @@ import android.view.MenuItem;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Created by Andy on 2015/6/11
+ */
 public class MainActivity extends AppCompatActivity {
+
+    private static final String[] tabTitles = new String[]{"小清新", "文艺范",
+            "大长腿", "黑丝袜", "小翘臀", "大胸妹"};
+    private static final String[] tabIds = new String[]{"4", "5", "3", "7",
+            "6", "2"};
+
+    private Toolbar mToolBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar mToolBar = (Toolbar) findViewById(R.id.toolbar);
+        mToolBar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolBar);
 
-        ViewPager mViewPager = (ViewPager)findViewById(R.id.viewpager);
+        TabLayout mTabLayout = (TabLayout) findViewById(R.id.tabs);
+
+        ViewPager mViewPager = (ViewPager) findViewById(R.id.viewpager);
         if (mViewPager != null) {
-           setupViewPager(mViewPager);
+            setupViewPager(mViewPager);
+            mTabLayout.setupWithViewPager(mViewPager);
         }
 
-        TabLayout mTabLayout = (TabLayout) findViewById(R.id.tabs);
-        mTabLayout.setupWithViewPager(mViewPager);
     }
 
     @Override
@@ -47,10 +58,17 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        switch (id) {
+            case R.id.action_statement:
+                Snackbar.make(mToolBar, "本APP仅为学习demo,所有图片抓取自http://www.dbmeinv.com/,版权归原作者所有", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                break;
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            case R.id.action_about:
+                Snackbar.make(mToolBar, "Email:ahence@163.com", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                break;
+
+            default:
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -58,12 +76,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(PageSectionFragment.newInstance("1"), "1");
-        adapter.addFragment(PageSectionFragment.newInstance("2"), "2");
-        adapter.addFragment(PageSectionFragment.newInstance("3"), "3");
-        adapter.addFragment(PageSectionFragment.newInstance("4"), "4");
-        adapter.addFragment(PageSectionFragment.newInstance("5"), "5");
-        adapter.addFragment(PageSectionFragment.newInstance("6"), "6");
+        int mCount = tabTitles.length;
+        for (int i = 0; i < mCount; i++) {
+            adapter.addFragment(PageSectionFragment.newInstance(tabIds[i]), tabTitles[i]);
+        }
+
         viewPager.setAdapter(adapter);
     }
 
