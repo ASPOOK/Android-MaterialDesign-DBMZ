@@ -3,7 +3,7 @@
 
 ##页面示例
  ![image](https://github.com/aspook/Android-MaterialDesign-DBMZ/raw/master/images/dbmz.jpg)
- ![image](https://github.com/aspook/IndicatorTabBar/raw/master/images/demo.jpg)
+
 ##用到的相关类库
   [Jsoup](http://jsoup.org/)
   [Glide](https://github.com/bumptech/glide)
