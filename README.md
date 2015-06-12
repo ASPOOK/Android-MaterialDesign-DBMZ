@@ -1,12 +1,14 @@
 ﻿
-# 从豆瓣美女（http://www.dbmeinv.com/）抓取的图片，采用Material Desigin风格设计的一个简单客户端
+# 从[豆瓣美女](http://www.dbmeinv.com/)抓取的图片，采用Material Desigin风格设计的一个简单客户端
 
 ##页面示例
  ![image](https://github.com/aspook/Android-MaterialDesign-DBMZ/raw/master/images/dbmz.jpg)
 
 ##用到的相关类库
   [Jsoup](http://jsoup.org/)
+  
   [Glide](https://github.com/bumptech/glide)
+  
   [Android-PullToRefresh](https://github.com/ASPOOK/Android-PullToRefresh)
 
 ##特别声明
