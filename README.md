@@ -1,5 +1,5 @@
 ﻿
-# 从[豆瓣美女](http://www.dbmeinv.com/)抓取的图片，采用Material Desigin风格设计的一个简单客户端
+# 豆瓣妹子是一个简单的非官方图片客户端，采用MD风格设计，所有图片均从[豆瓣美女](http://www.dbmeinv.com/)抓取。
 
 ##页面示例
  ![image](https://github.com/aspook/Android-MaterialDesign-DBMZ/raw/master/images/dbmz.jpg)
