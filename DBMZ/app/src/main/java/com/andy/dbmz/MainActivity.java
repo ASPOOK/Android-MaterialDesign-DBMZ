@@ -7,10 +7,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         mToolBar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolBar);
+
+        final ActionBar ab = getSupportActionBar();
+        ab.setHomeAsUpIndicator(R.mipmap.ic_launcher);
+        ab.setDisplayHomeAsUpEnabled(true);
 
         TabLayout mTabLayout = (TabLayout) findViewById(R.id.tabs);
 
@@ -60,11 +66,16 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id) {
             case R.id.action_statement:
-                Snackbar.make(mToolBar, "本APP仅为学习demo,所有图片抓取自http://www.dbmeinv.com/,版权归原作者所有", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                Snackbar.make(mToolBar, "本APP仅为学习开发使用,所有图片抓取自http://www.dbmeinv.com/,版权归原作者所有", Snackbar.LENGTH_LONG).setAction("Action", null).show();
                 break;
 
             case R.id.action_about:
-                Snackbar.make(mToolBar, "Email:ahence@163.com", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                Snackbar.make(mToolBar, "Email: ahence@163.com", Snackbar.LENGTH_LONG).setAction("Action", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                }).show();
                 break;
 
             default:
