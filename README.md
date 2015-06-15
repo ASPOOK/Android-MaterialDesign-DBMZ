@@ -9,7 +9,7 @@
   
   [Glide](https://github.com/bumptech/glide)
   
-  [Android-PullToRefresh](https://github.com/ASPOOK/Android-PullToRefresh)
+  [Android-PullToRefresh](https://github.com/chrisbanes/Android-PullToRefresh)
 
 ##特别声明
   本App仅供学习开发使用，上面的所有图片都抓取自[豆瓣美女](http://www.dbmeinv.com/)，版权归原作者所有
