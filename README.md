@@ -15,7 +15,7 @@
   本App仅供学习开发使用，上面的所有图片都抓取自[豆瓣美女](http://www.dbmeinv.com/)，版权归原作者所有
   
 ##作者邮箱
-   ahence@163.com
+   yourswee@gmail.com
  
 
 
